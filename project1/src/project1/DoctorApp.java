@@ -228,17 +228,31 @@ public class DoctorApp {
 					
 					p.add(new Patient(PName, Pssn, Paddress, Pphone, Pnote));
 					int index = list_1.getSelectedIndex();
-					if (Pssn.equals(checkpatient.get(index).getSsn())){
-						try {
-							updatepatient(f, l, index, PName, Pssn, Paddress, Pphone, Pnote);
-						} catch (Exception e1) {
-							// TODO Auto-generated catch block
-							e1.printStackTrace();
+					if(index != -1){
+						if (Pssn.equals(checkpatient.get(index).getSsn())){
+							try {
+								updatepatient(f, l, index, PName, Pssn, Paddress, Pphone, Pnote);
+							} catch (Exception e1) {
+								// TODO Auto-generated catch block
+								e1.printStackTrace();
+							}
+							checkpatient.set(index, new Patient(PName, Pssn, Paddress, Pphone, Pnote));
+							listModel.set(index, checkpatient.get(index).getname());
+							JOptionPane.showMessageDialog(null, "Update success");
+							p.remove(0);
 						}
-						checkpatient.set(index, new Patient(PName, Pssn, Paddress, Pphone, Pnote));
-						listModel.set(index, checkpatient.get(index).getname());
-						JOptionPane.showMessageDialog(null, "Update success");
-						p.remove(0);
+						else {
+							try {	
+								insertPatientdata(f, l);
+								JOptionPane.showMessageDialog(null, "Data has been saved");
+								checkpatient.add(new Patient(PName, Pssn, Paddress, Pphone, Pnote));
+								listModel.addElement(checkpatient.get(checkpatient.size() -1).getname());
+								p.remove(0);
+							} catch (Exception e1) {	
+								// TODO Auto-generated catch block
+								e1.printStackTrace();
+							}
+						}
 					}
 					else {
 						try {	
