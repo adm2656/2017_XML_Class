@@ -15,8 +15,8 @@ public class User implements Runnable{
     public void run(){
     	try {
     		index++;
-            ran = new Random();
-            int update = ran.nextInt(1001) + 500;
+            	ran = new Random();
+            	int update = ran.nextInt(1001) + 500;
     		Thread.sleep(update);
     		if(index < 100){
     			System.out.println(data.search(key));
