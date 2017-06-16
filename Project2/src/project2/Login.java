@@ -111,7 +111,7 @@ public class Login implements Runnable{
 				
 				file = new File("doctor.xml");
 				
-				if (first.equals("") || last.equals("") || num.equals("")){
+				if (first.equals("") || last.equals("")){
 					JOptionPane.showMessageDialog(null, "Please entet your name");
 				}
 				
@@ -190,7 +190,7 @@ public class Login implements Runnable{
 					
 					file = new File("doctor.xml");
 					
-					if (first.equals("") || last.equals("") || num.equals("")){
+					if (first.equals("") || last.equals("")){
 						JOptionPane.showMessageDialog(null, "You can't create an id without your name");
 					}
 					else if (!first.equals("") && !last.equals("")){
