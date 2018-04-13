@@ -6,4 +6,4 @@
 - Project 2 finish two sides and make the connection possible although it still have some small bugs
 
 
-[Preview of this project's GUI](./2017_XML_Class/report.pdf) 
+[Preview of this project's GUI](./report.pdf) 
